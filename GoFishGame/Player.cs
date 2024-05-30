@@ -18,6 +18,15 @@ namespace GoFishGame
             Hand = new List<Card>();
         }
 
+        public void DrawCard(Deck deck)
+        {
+            Card card = deck.Draw();
+            if (card != null)
+            {
+                Hand.Add(card);
+            }
+        }
+
         public void TakeCards(Player opponent, string rank)
         {
             List<Card> cardsToTake = opponent.Hand.Where(card => card.Rank == rank).ToList();
