@@ -61,5 +61,27 @@ namespace GoFishTest
             Assert.IsNotNull(card);
             Assert.AreEqual(51, deck.Cards.Count);
         }
+
+        //test method to determine winner of the game
+        [TestMethod]
+        public void TestDetermineWinner_PlayerWins()
+        {
+            var player = new Player("Player1");
+            var computer = new Player("Computer");
+            var deck = new Deck();
+            var game = new Game(player, computer, deck);
+
+            player.Hand.AddRange(new List<Card> {
+                new Card("7", "Hearts"),
+                new Card("7", "Diamonds"),
+                new Card("7", "Clubs"),
+                new Card("7", "Spades")
+            });
+            player.TakeCards(computer, "7"); // Player completes a set
+
+            var winner = game.DetermineWinner();
+
+            Assert.AreEqual(player, winner);
+        }
     }
 }
