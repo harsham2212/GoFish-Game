@@ -33,5 +33,21 @@ namespace GoFishTest
 
             game.DisplayInstructions();
         }
+
+        //test method to deal inititial card
+        [TestMethod]
+        public void TestDealInitialCards()
+        {
+            var player = new Player("Player1");
+            var computer = new Player("Computer");
+            var deck = new Deck();
+            deck.Shuffle();
+            var game = new Game(player, computer, deck);
+
+            game.DealInitialCards();
+
+            Assert.AreEqual(7, player.Hand.Count);
+            Assert.AreEqual(7, computer.Hand.Count);
+        }
     }
 }
