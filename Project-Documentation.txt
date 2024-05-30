@@ -1,0 +1,53 @@
+------------------------GO-FISH Card Game---------------------
+
+Go Fish is a simple and engaging card game suitable for 2-6 players. The objective is to collect as many sets of four matching cards as possible.
+
+Instruction to Play :-
+
+Setup: Use a standard 52-card deck. Shuffle the cards and deal 5 cards to each player (7 cards if only 2 players). The remaining cards form the draw pile.
+Objective: Form sets of four matching cards (e.g., four Kings).
+Gameplay: Players take turns asking a specific player for a card they need to complete a set (e.g., "Do you have any Kings?").
+        If the asked player has the card, they must give all matching cards to the requester, who then gets another turn.
+        If the asked player does not have the card, they say "Go Fish," and the requester draws a card from the draw pile. 
+        If the drawn card completes a set, the requester shows it and gets another turn; otherwise, the turn passes to the next player
+Winning: The game ends when all sets are completed. The player with the most sets wins.
+
+Each set of four cards is worth 1 point. The player with the most points at the end of the game is the winner.
+
+Card Ranks and Suits :
+
+The ranks of the cards include:
+    Numerical ranks: "2", "3", "4", "5", "6", "7", "8", "9", "10"
+    Face ranks: "J" (Jack), "Q" (Queen), "K" (King), "A" (Ace)
+The suits of the cards include:
+    Clubs
+    Diamonds
+    Hearts
+    Spades
+
+Framework : .NET 7.0
+Console Based Application
+MSTesting
+
+Current Code Structure :
+  
+1. Program.cs: Handles the initial setup and starts the game.
+2. Game.cs: Contains the main game logic, including displaying instructions, dealing cards, taking turns, and determining the winner.
+3. Deck.cs: Manages the deck of cards, including shuffling and drawing cards.
+4. Player.cs: Represents a player, including their hand of cards and the logic for drawing and taking cards.
+5. Card.cs: Represents a single card with a rank and suit.
+
+Current Test Case :
+
+Tests: Unit tests for verifying the functionality of game initialization, dealing cards, drawing cards, and determining the winner.
+
+Future Aspect for this Application :
+
+1.Multiplayer feature can be added.
+2.Score Can be stored.
+3.More accuracy can be added.
+4.UI expeience will make more interactive.
+
+Future Aspect for TestCase :
+
+Every functionalities or methods that has been added will be tested.
