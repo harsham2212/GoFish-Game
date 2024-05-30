@@ -6,6 +6,7 @@ namespace GoFishTest
     [TestClass]
     public class GameTests
     {
+        //test method to initialize game
         [TestMethod]
         public void TestGameInitialization()
         {
@@ -19,6 +20,18 @@ namespace GoFishTest
             Assert.AreEqual(player, game.Player);
             Assert.AreEqual(computer, game.Computer);
             Assert.AreEqual(deck, game.Deck);
-        }  
+        }
+
+        //test method to display Instructions
+        [TestMethod]
+        public void TestDisplayInstructions()
+        {
+            var player = new Player("Player1");
+            var computer = new Player("Computer");
+            var deck = new Deck();
+            var game = new Game(player, computer, deck);
+
+            game.DisplayInstructions();
+        }
     }
 }
