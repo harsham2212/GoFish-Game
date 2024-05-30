@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,7 @@ namespace GoFishGame
                     break;
                 }
             }
+            DetermineWinner();
         }
 
         public void DisplayInstructions()
@@ -88,6 +90,12 @@ namespace GoFishGame
                 {
                     Console.Write("Ask for a rank (e.g., 7, J, Q): ");
                     rank = Console.ReadLine();
+
+                    while (!IsValidRank(rank))
+                    {
+                        Console.WriteLine("Invalid rank. Please try again.");
+                        rank = Console.ReadLine();
+                    }
                 }
             }
 
@@ -102,6 +110,34 @@ namespace GoFishGame
                 Console.WriteLine($"{opponent.Name} says: Go Fish!");
                 currentPlayer.DrawCard(Deck); // Player draws a card from the deck
                 Console.WriteLine($"{currentPlayer.Name} draws a card from the deck.\n");
+            }
+        }
+
+        private bool IsValidRank(string rank)
+        {
+            string[] validRanks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+            return validRanks.Contains(rank);
+        }
+
+        public Player DetermineWinner()
+        {
+            int playerSets = Player.Sets;
+            int computerSets = Computer.Sets;
+
+            if (playerSets > computerSets)
+            {
+                Console.WriteLine($"{Player.Name} wins with {playerSets} sets!");
+                return Player;
+            }
+            else if (computerSets > playerSets)
+            {
+                Console.WriteLine($"{Computer.Name} wins with {computerSets} sets!");
+                return Computer;
+            }
+            else
+            {
+                Console.WriteLine("It's a tie!");
+                return null; // Return null in case of a tie
             }
         }
     }
