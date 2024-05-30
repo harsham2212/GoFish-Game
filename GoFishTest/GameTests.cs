@@ -49,5 +49,17 @@ namespace GoFishTest
             Assert.AreEqual(7, player.Hand.Count);
             Assert.AreEqual(7, computer.Hand.Count);
         }
+
+        //test method to verify that card is drawn from deck
+        [TestMethod]
+        public void TestDrawCard()
+        {
+            var deck = new Deck();
+
+            var card = deck.Draw();
+
+            Assert.IsNotNull(card);
+            Assert.AreEqual(51, deck.Cards.Count);
+        }
     }
 }
