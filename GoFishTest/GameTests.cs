@@ -115,5 +115,25 @@ namespace GoFishTest
             }
             Assert.IsTrue(orderChanged, "The order of cards should change after shuffling.");
         }
+
+        //for failing
+        // Test that initializing the game with a null player throws an exception
+        [TestMethod]
+        public void TestGameInitialization_NullPlayer()
+        {
+            Player player = null;
+            Player computer = new Player("Computer");
+            Deck deck = new Deck();
+
+            try
+            {
+                new Game(player, computer, deck);
+                Assert.Fail("Expected ArgumentNullException for null player, but no exception was thrown.");
+            }
+            catch (ArgumentNullException ex)
+            {
+                Assert.AreEqual("player", ex.ParamName, "Unexpected parameter name in ArgumentNullException.");
+            }
+        }
     }
 }

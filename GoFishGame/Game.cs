@@ -15,9 +15,9 @@ namespace GoFishGame
 
         public Game(Player player, Player computer, Deck deck)
         {
-            Player = player;
-            Computer = computer;
-            Deck = deck;
+            Player = player ?? throw new ArgumentNullException(nameof(player));
+            Computer = computer ?? throw new ArgumentNullException(nameof(computer));
+            Deck = deck ?? throw new ArgumentNullException(nameof(deck));
         }
 
         public void Start()

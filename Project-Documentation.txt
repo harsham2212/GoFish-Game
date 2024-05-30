@@ -40,6 +40,7 @@ Current Code Structure :
 Current Test Case :
 
 Tests: Unit tests for verifying the functionality of game initialization, dealing cards, drawing cards, and determining the winner.
+Fail tests : Unit test for verifying game initilization as null player.
 
 Future Aspect for this Application :
 
@@ -47,6 +48,7 @@ Future Aspect for this Application :
 2.Score Can be stored.
 3.More accuracy can be added.
 4.UI expeience will make more interactive.
+5.without taking name of the player, game will not start otherwise set deafault name as Player.
 
 Future Aspect for TestCase :
 
