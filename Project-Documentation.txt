@@ -49,6 +49,11 @@ Future Aspect for this Application :
 3.More accuracy can be added.
 4.UI expeience will make more interactive.
 5.without taking name of the player, game will not start otherwise set deafault name as Player.
+6.difficulty level should be increased or decreased.
+7.Demo playing can be added, if someone is new then he/she knows how to play.
+8.Record can be kept more clear so player knows which card he/she want to make pair.
+9.It can be a Android or IOS game so that anyone can play anywhere.
+10.Messaging or Emoji feature can also be added so that player can enjoy chatting while playing.
 
 Future Aspect for TestCase :
 
